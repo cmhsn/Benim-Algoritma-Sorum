@@ -1,0 +1,75 @@
+package ödevjava;
+
+class araba{
+    private int arabaÜretimYil;
+    String arabaModel;
+    String arabaMarka;
+    String arabaRenk;
+    public araba(int arabaÜretimYil, String arabaModel, String arabaMarka,String arabaRenk){
+        
+        this.arabaÜretimYil=arabaÜretimYil;
+        this.arabaModel=arabaModel;
+        this.arabaMarka=arabaMarka;
+        this.arabaRenk=arabaRenk;
+    }
+ 
+    public int getÜretimYil(){
+        
+        return arabaÜretimYil;
+    }
+     
+    public String getRenk(){  
+        return arabaRenk;  
+    }
+    public String getModel(){
+        
+        return arabaModel;
+    }
+        public String getMarka(){
+        
+        return arabaMarka;
+    }
+    } 
+      class motor extends araba{  
+            String motorYakit;
+           private int motorGücü;
+            
+            
+        public motor(int arabaÜretimYil, String arabaModel, String arabaMarka,String arabaRenk,String motorYakit,int motorGücü) {
+            super(arabaÜretimYil, arabaModel, arabaMarka,arabaRenk);
+            this.motorYakit=motorYakit;
+            this.motorGücü=motorGücü;
+        }
+
+         void gücArttir(int deger){
+            
+             motorGücü = motorGücü+deger;
+        }
+   
+        public String getmotorYakit(){   
+            return motorYakit;
+        }
+         public int getMotorGücü(){   
+            return motorGücü;
+        }
+  
+        }      
+
+
+
+public class ÖdevJava {
+    public static void main(String[] args) {
+       motor m1 =new motor(2020,"3.20","BMW","Mavi","Dizel",1600);
+       m1.gücArttir(400);
+       ÖdevJava arac1 =new ÖdevJava();
+       arac1.Yazdir(m1);
+    }
+    
+      public void Yazdir(motor arab) {
+        System.out.println(" Arabanın markasi :"+arab.arabaMarka);
+        System.out.println(" Arabanın modeli :"+arab.getModel());
+        System.out.println(" Arabanın Motor Gücü :"+arab.getMotorGücü());
+        System.out.println(" Arabanın Üretim Yılı :"+arab.getÜretimYil());
+        System.out.println(" Arabanın rengi :"+arab.getRenk());
+      }
+}
